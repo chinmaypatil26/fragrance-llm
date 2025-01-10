@@ -1,0 +1,16 @@
+streamlit
+langchain
+langchain-community
+langchain-groq
+langchain-chroma
+chromadb
+unstructured
+ollama
+llama-index==0.10.32
+langchain-ollama
+validators
+python-dotenv
+youtube-transcript-api
+pytube
+yt-dlp
+duckduckgo-search
