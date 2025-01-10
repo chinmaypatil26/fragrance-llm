@@ -76,6 +76,7 @@ if st.button("GO"):
                 time.sleep(1)
 
             summary_prompt = """
+            You are a fragrance expert with a lot of knowledge from the web.
             Create a table with the PERFUME NAME, NOTES of the perfume, the REVIEW and the RATING. 
             Also mention the clone in the review if it is a clone of an expensive perfume.
             Note: The content/context may contain arabic names if it's a clone video or a lot of french names if it isn't, do not mess up the names.
