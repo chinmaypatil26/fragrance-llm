@@ -26,7 +26,7 @@ Content: {text}
 """
 
 notes_summary = """
-You are given the notes for the perfume, create pointers with the labels "top", "middle" and "base".
+You are given the notes for the perfume, create pointers with the labels "perfume name", "top", "middle" and "base".
 
 Content: {text}
 """
@@ -75,21 +75,22 @@ if st.button("GO"):
                 context += notes
                 time.sleep(1)
 
-            print(context)
             summary_prompt = """
-            Create a table with the notes of the perfume, the review and the rating. 
+            Create a table with the PERFUME NAME, NOTES of the perfume, the REVIEW and the RATING. 
             Also mention the clone in the review if it is a clone of an expensive perfume.
-            Note: The video may contain arabic names if it's a clone video or a lot of french names if it isn't, please do not mess up the names.
+            Note: The content may contain arabic names if it's a clone video or a lot of french names if it isn't, please do not mess up the names.
             You are given the Content below.
-            Use the perfume names from the context and context only.
+            Use the perfume names, notes from the context and context only. Use the review and rating from content.
+            Provide only the table as the output. This output will be outputted directly in streamlit success method.
 
-            Content: {text}
+            content: {text}
             Context: {context}
             """
             summary_prompt_template = PromptTemplate(template=summary_prompt, input_variables=['text', 'context'])
 
             chain = load_summarize_chain(llm, "stuff", prompt=summary_prompt_template)
-            output_summary = chain.invoke({"input_documents": docs, "context": context})
+
+            output_summary = chain.invoke({"input_documents": docs, 'context':context})
 
             st.success(output_summary['output_text'])
         except Exception as e:
