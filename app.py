@@ -9,7 +9,7 @@ from langchain_core.documents import Document
 from langchain_groq import ChatGroq
 
 groq_api_key = st.secrets["GROQ_API_KEY"]
-llm = ChatGroq(model="Gemma2-9b-It", groq_api_key=groq_api_key, max_tokens=2000)
+llm = ChatGroq(model="Llama-3.3-70b-Versatile", groq_api_key=groq_api_key, max_tokens=2000)
 
 # Define prompts
 
