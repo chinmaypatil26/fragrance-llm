@@ -78,13 +78,13 @@ if st.button("GO"):
             summary_prompt = """
             Create a table with the PERFUME NAME, NOTES of the perfume, the REVIEW and the RATING. 
             Also mention the clone in the review if it is a clone of an expensive perfume.
-            Note: The content may contain arabic names if it's a clone video or a lot of french names if it isn't, please do not mess up the names.
-            You are given the Content below.
-            Use the perfume names, notes from the context and context only. Use the review and rating from content.
+            Note: The content/context may contain arabic names if it's a clone video or a lot of french names if it isn't, do not mess up the names.
+            You are given the Content and Context below.
+            Use the perfume names, notes from the context and context only. Use the content for review and rating. 
             Provide only the table as the output. This output will be outputted directly in streamlit success method.
 
             content: {text}
-            Context: {context}
+            context: {context}
             """
             summary_prompt_template = PromptTemplate(template=summary_prompt, input_variables=['text', 'context'])
 
