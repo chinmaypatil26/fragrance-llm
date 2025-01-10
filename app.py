@@ -32,7 +32,7 @@ Content: {text}
 """
 
 list_template = """
-Convert the following text into a valid Python list of strings. Give only the python extract, no extra characters.
+Convert the following text into a valid Python list of strings. Give only the PYTHON LIST OBJECT that can directly be evaluated as a list, no extra characters.
 Text: {text}
 """
 
