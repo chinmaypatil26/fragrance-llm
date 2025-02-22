@@ -14,3 +14,8 @@ youtube-transcript-api
 pytube
 yt-dlp
 duckduckgo-search
+transformers
+torch
+chromadb
+numpy
+pandas
