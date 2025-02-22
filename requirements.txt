@@ -20,5 +20,4 @@ chromadb
 numpy
 pandas
 sentence-transformers
-pysqlite3
 duckdb
