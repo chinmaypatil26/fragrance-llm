@@ -30,7 +30,9 @@ model_name = 'intfloat/multilingual-e5-large'
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModel.from_pretrained(model_name).to(device)
 
-chroma_client = chromadb.PersistentClient(path="C:\\CodingStuff\\Gen AI\\chroma_db")
+chroma_client = chromadb.PersistentClient(path="chroma_db", settings=chromadb.config.Settings(
+    chroma_db_impl="duckdb"
+))
 embeddings_model = HuggingFaceEmbeddings(model_name=model_name)
 collection_name = "fragrantica_embeddings"
 collection = chroma_client.get_or_create_collection(name=collection_name)
