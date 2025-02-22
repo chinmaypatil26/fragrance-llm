@@ -26,7 +26,7 @@ load_dotenv()
 
 groq_api_key = st.secrets["GROQ_API_KEY"]
 llm = ChatGroq(
-    model="Llama-3.3-70b-Versatile", groq_api_key=groq_api_key, max_tokens=20000
+    model="Llama-3.3-70b-Versatile", groq_api_key=groq_api_key, max_tokens=2000
 )
 torch.classes.__path__ = []
 device = "cuda" if torch.cuda.is_available() else "cpu"
