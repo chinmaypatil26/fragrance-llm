@@ -20,4 +20,4 @@ chromadb
 numpy
 pandas
 sentence-transformers
-db-sqlite3
+pysqlite3
